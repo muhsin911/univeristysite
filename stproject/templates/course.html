@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <title>Education - List of Meetings</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-edu-meeting.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+</head>
+<body>
+
+<!-- Sub Header -->
+<div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Education-focused website for learning by StraightPath</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <div class="icon">
+                            <a href="{% url 'stapp:allcat' %}">
+                              <img  src="{% static 'images/stlogo.png' %}" alt="Logo" style="max-height: 200px; max-width: 200px; float: left;">
+                            </a>
+                        </div>
+
+
+                    <a href="index.html" class="logo">Straight Path University</a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{% url 'stapp:allcat' %}">Home</a></li>
+
+                        <li><a href="{% url 'stapp:form' %}">Apply Now</a></li>
+
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>Here are our upcoming meetings</h6>
+                <h2>Upcoming Meetings</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="meetings-page" id="meetings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row grid">
+                            {% for course in courses %}
+                            <div class="col-lg-4 templatemo-item-col all soon">
+                                <div class="meeting-item">
+                                    <div class="thumb">
+                                        <div class="price">
+                                            <span>${{course.fees}}</span>
+                                        </div>
+                                        <a href="https://en.wikipedia.org/wiki/{{course.name}}">
+                                            <img src="{{course.image.url}}" alt="{{course.name}}">
+                                        </a>
+                                    </div>
+                                    <div class="down-content">
+<!--                                        <div class="date">-->
+<!--                                            <h6>Nov <span>12</span></h6>-->
+<!--                                        </div>-->
+                                        <a href="https://en.wikipedia.org/wiki/{{course.name}}"><h4>{{course.name}}</h4></a>
+                                        <p>{{course.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="footer">
+      <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved.
+          <br>Design: AMK Developers PVT LTD</p>
+    </div>
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.min.js' %}"></script>
+<script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'assets/js/lightbox.js' %}"></script>
+<script src="{% static 'assets/js/tabs.js' %}"></script>
+<script src="{% static 'assets/js/isotope.js' %}"></script>
+<script src="{% static 'assets/js/video.js' %}"></script>
+<script src="{% static 'assets/js/slick-slider.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+<script>
+    //according to loftblog tut
+    $('.nav li:first').addClass('active');
+
+    var showSection = function showSection(section, isAnimate) {
+      var
+      direction = section.replace(/#/, ''),
+      reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+      reqSectionPos = reqSection.offset().top - 0;
+
+      if (isAnimate) {
+        $('body, html').animate({
+          scrollTop: reqSectionPos },
+        800);
+      } else {
+        $('body, html').scrollTop(reqSectionPos);
+      }
+    };
+
+    var checkSection = function checkSection() {
+      $('.section').each(function () {
+        var
+        $this = $(this),
+        topEdge = $this.offset().top - 80,
+        bottomEdge = topEdge + $this.height(),
+        wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var
+          currentId = $this.data('section'),
+          reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+          reqLink.closest('li').addClass('active').
+          siblings().removeClass('active');
+        }
+      });
+    };
+
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+      e.preventDefault();
+      showSection($(this).attr('href'), true);
+    });
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+</script>
+</body>
+</html>

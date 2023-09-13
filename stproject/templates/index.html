@@ -1,0 +1,540 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education Meeting HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-edu-meeting.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+
+
+  </head>
+
+<body>
+
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Education-focused website for learning by StraightPath</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                        <div class="icon">
+                              <img src="{% static 'images/stlogo.png' %}" alt="Logo" style="max-height: 200px; max-width: 200px; float: left;">
+                       </div>
+
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+
+                          <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">Departments</a>
+                              <ul class="sub-menu">
+                                  {% for dept in depts %}
+                                  <li><a href="https://en.wikipedia.org/wiki/{{dept.name}}">{{dept.name}}</a></li>
+                                  {% endfor %}
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="#courses">Courses</a></li> 
+
+                          {% if user.is_authenticated %}
+                          <li><a href="credentials/logout" style="text-color:MediumSeaGreen;">Hello  {{user.username}}<br>Logout</a></li>
+                          {% else %}
+                          <li><a id="login" href="credentials/login">Login</a></li>
+                          <li><a href="credentials/register">Register</a></li>
+                          {% endif %}
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="{% static 'images/course-video.mp4' %}" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h6>Hello Students</h6>
+              <h2>Welcome to StraightPath University</h2>
+              <p>StraightPath University is dedicated to providing a clear and purposeful educational journey. With a commitment to integrity, we empower students to follow a direct path to knowledge and personal growth.</p>
+              <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Get in touch with us</a></div>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+          
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'images/service-icon-01.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Education</h4>
+                <p>StraightPath University offers the best education, fostering excellence and personal growth. Our exceptional faculty and state-of-the-art facilities create an inspiring learning environment for student success.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'images/service-icon-02.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Teachers</h4>
+                <p>StraightPath University's exceptional faculty, dedicated, experienced, and passionate educators, provide the highest quality instruction, inspiring, mentoring, and empowering students on their educational journey.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'images/service-icon-03.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Best Students</h4>
+                <p>StraightPath University nurtures the best students—talented, driven, and dedicated to excellence. Our diverse and accomplished student body contributes to a vibrant and dynamic learning environment</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'images/service-icon-02.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Student Labs</h4>
+                <p>StraightPath University's premier labs are hubs of innovation, enabling hands-on learning and groundbreaking research. Our cutting-edge facilities drive student excellence in science and technology.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'images/service-icon-03.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Alumni</h4>
+                <p>StraightPath University's accomplished alumni community represents excellence. Their achievements and contributions to society reflect the quality education and values instilled by our institution.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Courses</h2>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="categories">
+                    <h4>Courses</h4>
+                    <ul>
+                        {% for course in courses %}
+                            {% if forloop.counter <= 6 %}
+                            <li><a href="https://en.wikipedia.org/wiki/{{course.name}}">{{course.name}}</a></li><br>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <div class="main-button-red">
+                        <a href="{% url 'stapp:rcourse' %}">All Courses</a>
+                    </div>
+                </div>
+            </div>
+            {% for course in courses %}
+                {% if forloop.counter <= 5 %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="meeting-item" style="height: 500px; overflow: hidden;">
+                        <div class="thumb" style="height: 60%; width: 100%;">
+                            <div class="price">
+                                <span>${{course.fees}}</span>
+                            </div>
+                            <a href="https://en.wikipedia.org/wiki/{{course.name}}"><img src="{{ course.image.url }}" alt="{{course.name}}" style="width: 100%; height: 300px;"></a>
+                        </div>
+                        <div class="down-content">
+                            <div class="date">
+                                <h6>Total Seats <span>{{course.no_of_seats}}</span></h6>
+                            </div>
+                            <a href="https://en.wikipedia.org/wiki/{{course.name}}" style="text-color:grey;"><h4>{{course.name}}</h4></a>
+                            <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{course.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+  <section class="apply-now" id="apply">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>APPLY FOR THE COURSE</h3>
+                <div class="main-button-red">
+                    {% if user.is_authenticated %}
+                    <p>Hi {{user.username}},  you are logged in, go ahead and apply right here!</p>
+                    <a href="studentreg/">Apply Now</a>
+                  <div class="scroll-to-section"></div>
+                    {% else %}
+
+                    <a href="credentials/login">Login</a>for application
+                    <p>Access learning opportunities here. Login required for non-logged-in users to enroll in courses.
+
+                    {% endif %}
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>About StraightPath University</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Straight Path University, established in 1998 under the visionary leadership of Professor Abdul Muhsin K, is an esteemed institution committed to fostering academic brilliance and pioneering innovation in education. With a rich heritage of over two decades, it continues to shape future leaders and empower students worldwide.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Achievements</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Straight Path University boasts a remarkable legacy of achievements. It has consistently ranked among the top educational institutions globally, earning accolades for excellence in diverse fields. Its contributions to research, innovation, and community development have left an indelible mark. With a commitment to nurturing talent and driving progress, the university continues to produce leaders, scholars, and changemakers who make significant contributions to society, science, and technology, ensuring a brighter future for all</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Science & Research</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Straight Path University has firmly established itself as a leading institution in the realm of scientific research. With an unwavering dedication to advancing human knowledge, the university's researchers have delved into diverse disciplines, ranging from cutting-edge technology to fundamental scientific exploration.<br><br>
+                        Their pioneering efforts have yielded transformative breakthroughs, driving innovation and addressing some of the most pressing global challenges. Straight Path's commitment to fostering a culture of curiosity and discovery has not only enriched academic discourse but also translated into real-world applications, making a profound impact on society. As the university continues to push the boundaries of scientific inquiry, it remains at the forefront of shaping a brighter, more informed future.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion last-accordion">
+                <div class="accordion-head">
+                    <span>Placements</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Straight Path University has an exceptional track record in placing its graduates in prestigious positions across various industries. The university's career services, industry connections, and practical curriculum ensure that students are well-prepared for the job market. Employers value Straight Path graduates for their expertise and professionalism, making them sought-after candidates. The university's commitment to career development and fostering strong alumni networks further solidifies its reputation for producing successful and employable graduates.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-courses" id="courses">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading">
+          <h2>Our Departments</h2>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="owl-courses-item owl-carousel">
+          {% for dept in depts %}
+            <div class="item" style="height: 600px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 15px; margin: 10px; overflow: hidden;">
+              <div class="image-container" style="height: 200px; width: 100%; overflow: hidden;">
+                  <a href="https://en.wikipedia.org/wiki/{{dept.name}}">
+                <img src="{{ dept.image.url }}" alt="Course Image" style="width: 100%; height: 100%; object-fit: cover;">
+                  </a>
+              </div>
+              <div class="down-content" style="text-align: center; padding: 10px;">
+                  <a href="https://en.wikipedia.org/wiki/{{dept.name}}">
+                  <h3>{{dept.name}}</h3>
+                  </a>
+                <h4>{{ dept.description }}</h4>
+                <!-- Other department details here -->
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="our-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>A Few Facts About Our University</h2>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content percentage">
+                    <div class="count-digit">94</div>
+                    <div class="count-title">Succesed Students</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">126</div>
+                    <div class="count-title">Current Teachers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="count-area-content new-students">
+                    <div class="count-digit">2345</div>
+                    <div class="count-title">New Students</div>
+                  </div>
+                </div> 
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">32</div>
+                    <div class="count-title">Awards</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col-lg-6 align-self-center">
+          <div class="video">
+            <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="{% static 'images/play-icon.png' %}" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="contact" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Let's get in touch</h2>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                  </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="button"><a href="{% url 'stapp:rtouch' %}">SEND MESSAGE NOW</a></button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="right-info">
+            <ul>
+              <li>
+                <h6>Phone Number</h6>
+                <span>010-020-0340</span>
+              </li>
+              <li>
+                <h6>Email Address</h6>
+                <span>info@straightpath.edu</span>
+              </li>
+              <li>
+                <h6>Street Address</h6>
+                <span>Malappuram - Ponnani, 22795-008, India</span>
+              </li>
+              <li>
+                <h6>Website URL</h6>
+                <span>www.straighpath.edu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
+          <br>Design: AMK Developers PVT LTD</p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/isotope.min.js' %}"></script>
+    <script src="{% static 'js/owl-carousel.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <script src="{% static 'js/tabs.js' %}"></script>
+    <script src="{% static 'js/video.js' %}"></script>
+    <script src="{% static 'js/slick-slider.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+
+</body>
+
+
+</html>

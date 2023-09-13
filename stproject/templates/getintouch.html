@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Notification</title>
+    <style>
+        body {
+            background-image: url('{% static "images/meetings-bg.jpg" %}'); /* Replace 'your-background-image.jpg' with the path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        .message {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>We will update through your mail</h1>
+    </div>
+
+    <div class="main-button-red">
+        <a href="{% url 'stapp:allcat' %}">Home page</a>
+    </div>
+</body>
+</html>

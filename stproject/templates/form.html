@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <title>Free Online Student Registration Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>STRAIGHT PATH UNIVERSITY</h1>
+        <h2>Student Registration Form</h2>
+        <div class="form-wrapper">
+            <form action="">
+                <div class="form-item">
+                    <label for="studentimage">Student Image:</label>
+                    <input type="file" name="studentimage" id="studentimage" required>
+                    <p>(less than 5 Mb)</p>
+                </div>
+                <div class="form-item">
+                    <label for="fullname">Student Name:</label>
+                    <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+                </div>
+                <div class="form-item">
+                    <label for="fathersname">Father's Name:</label>
+                    <input type="text" name="fathersname" id="fathersname" placeholder="Father's Full Name" required>
+                </div>
+                <div class="form-item">
+                    <label for="mothersname">Mother's Name:</label>
+                    <input type="text" name="mothersname" id="mothersname" placeholder="Mother's Full Name" required>
+                </div>
+                <div class="form-item">
+                    <label for="gender">Gender:</label>
+                    <div class="genders">
+                        <p>Male</p> <input type="radio" name="gender" id="gender" value="male" required>
+                        <p>Female</p> <input type="radio" name="gender" id="gender" value="female">
+                        <p>Other</p> <input type="radio" name="gender" id="gender" value="other">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="email">Date of Birth:</label>
+                    <input type="date" name="DOB" id="DOB" required>
+                </div>
+                <div class="form-item">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" placeholder="Age" required>
+                </div>
+                <div class="form-item">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="email@xyz.com" required>
+                </div>
+                <div class="form-item">
+                    <label for="phonenumber">Tel/Mobile:</label>
+                    <input type="tel" name="phonenumber" id="phonenumber" placeholder="XXX XXX XXXX" required>
+                </div>
+                <div class="form-item">
+                    <label for="department">Department:</label>
+                    <select id="department" name="department">
+                        <option value="" disabled selected>Select a Department</option>
+                        {% for department in departments %}
+                        <option value="{{ department.id }}">{{ department.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="course">Courses:</label>
+                    <select id="course" name="course" disabled>
+                        <option value="" disabled selected>Select a Department first</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="purpose">Purpose:</label>
+                    <select name="purpose" id="purpose">
+                        <option value="enquiry">Enquiry</option>
+                        <option value="admission">Admission</option>
+                        <!-- <option value="examtimetable">Exam TimeTable</option> -->
+                        <option value="notifications">Notifications</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label>Materials Provided:</label>
+                    <div class="materials">
+                        <div style="display: inline-block;text-align: center;">
+                        <input type="checkbox" id="material1" name="materials" value="Notebook">
+                        <label for="material1">Study Materials</label>
+                        </div>
+                        <div style="display: inline-block;text-align: center;">
+                        <input type="checkbox" id="material2" name="materials" value="Pen">
+                        <label for="material2">Laptop</label>
+                        </div>
+                        <div style="display: inline-block;text-align: center;">
+                        <input type="checkbox" id="material3" name="materials" value="Exam Papers">
+                        <label for="material3">Assignment set</label>
+                        </div>
+                        <div style="display: inline-block;text-align: center;">
+                        <input type="checkbox" id="material4" name="materials" value="Exam Papers">
+                        <label for="material3">Laboratory Materials</label>
+                        </div>
+
+                        <!-- Add more materials with checkboxes as needed -->
+                    </div>
+                </div>
+
+                <hr>
+                <h3>Permanent Address</h3>
+                <div class="form-item">
+                    <label for="pstate">State:</label>
+                    <input type="text" name="pstate" id="pstate" placeholder="State" required>
+                </div>
+                <div class="form-item">
+                    <label for="pcity">City:</label>
+                    <input type="text" name="pcity" id="pcity" placeholder="City" required>
+                </div>
+                <div class="form-item">
+                    <label for="pzip">Zip Code:</label>
+                    <input type="number" name="pzip" id="pzip" placeholder="Zip Code" required>
+                </div>
+                <div class="form-item">
+                    <label for="pphonenumber">Tel/Mobile:</label>
+                    <input type="tel" name="pphonenumber" id="pphonenumber" placeholder="XXX XXX XXXX" required>
+                </div>
+                <hr>
+                <h3>Temporary Address</h3>
+                <div class="same-perm">
+                    <label for="sameaspermanent">Same as Permanent Address:</label> <input type="checkbox" name="sameaspermanent" id="sameaspermanent">
+                </div>
+                <div class="form-item">
+                    <label for="tstate">State:</label>
+                    <input type="text" name="tstate" id="tstate" placeholder="State" required>
+                </div>
+                <div class="form-item">
+                    <label for="tcity">City:</label>
+                    <input type="text" name="tcity" id="tcity" placeholder="City" required>
+                </div>
+                <div class="form-item">
+                    <label for="tzip">Zip Code:</label>
+                    <input type="number" name="tzip" id="tzip" placeholder="Zip Code" required>
+                </div>
+                <div class="form-item">
+                    <label for="tphonenumber">Tel/Mobile:</label>
+                    <input type="tel" name="tphonenumber" id="tphonenumber" placeholder="XXX XXX XXXX" required>
+                </div>
+                <button class="register" type="submit" id="confirmationButton">Submit</button>
+                <button class="register" type="submit" id="confirmationButton2">Logout</button>
+            </form>
+            <script>
+               var logoutURL = "{% url 'credentials:rlogout' %}";
+               var submitURL = "{% url 'stapp:allcat' %}";
+
+            </script>
+            <script>
+
+                // Get the button element by its id
+                var button = document.getElementById("confirmationButton");
+
+                // Add a click event listener to the button
+                button.addEventListener("click", function () {
+                    // Use the `confirm` function to display a confirmation dialog
+                    var confirmed = confirm("Are you sure you want to proceed?");
+
+                    // Check if the user confirmed or canceled
+                    if (confirmed) {
+                        alert("Confirmed! Proceeding...");
+                        window.location.href = submitURL;
+                    } else {
+                        alert("Canceled.");
+                    }
+                });
+
+                // Get the button element by its id
+                var button2 = document.getElementById("confirmationButton2");
+
+                // Add a click event listener to the button
+                button2.addEventListener("click", function () {
+                    // Use the `confirm` function to display a confirmation dialog
+                    var confirmed = confirm("Do you want to logout");
+
+                    // Check if the user confirmed or canceled
+                    if (confirmed) {
+                        alert("You are logging out....");
+                        window.location.href = logoutURL;
+                    } else {
+                        alert("Continue editing....");
+                    }
+                });
+
+                var departmentSelect = document.getElementById("department");
+                var courseSelect = document.getElementById("course");
+
+                departmentSelect.addEventListener("change", function () {
+                    var selectedDepartmentId = departmentSelect.value;
+
+                    // Clear course options
+                    courseSelect.innerHTML = "";
+                    courseSelect.disabled = true;
+
+                    // Make an AJAX request to fetch courses based on the selected department
+                    if (selectedDepartmentId) {
+                        fetch(`/get_courses_by_department/${selectedDepartmentId}/`)
+                            .then(response => response.json())
+                            .then(data => {
+                                courseSelect.innerHTML = '<option value="" disabled selected>Select a Course</option>';
+                                data.forEach(course => {
+                                    courseSelect.innerHTML += `<option value="${course.id}">${course.name}</option>`;
+                                });
+                                courseSelect.disabled = false; // Enable the course dropdown
+                            })
+                            .catch(error => {
+                                console.error('Error fetching courses:', error);
+                            });
+                    } else {
+                        // If no department is selected, disable the course dropdown
+                        courseSelect.innerHTML = '<option value="" disabled selected>Select a Department first</option>';
+                        courseSelect.disabled = true;
+                    }
+                });
+            </script>
+            <script src="{% static 'js/form.js' %}"></script>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+body {
+            background-image: url('{% static "images/meetings-page-bg.jpg" %}'); /* Replace 'your-background-image.jpg' with the path to your background image */
+
+        }
+</style>
